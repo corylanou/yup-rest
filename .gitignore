@@ -1,4 +1,4 @@
-yup-rest
 pkg
-src
 .DS_Store
+src/github.com
+src/julia-allyce/yup-rest/yup-rest
