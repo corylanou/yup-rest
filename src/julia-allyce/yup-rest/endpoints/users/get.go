@@ -19,7 +19,7 @@ func Get(w http.ResponseWriter, r *http.Request) {
 	data, err := json.Marshal(user)
 
 	if err != nil {
-		log.Printf("Error marshalling json: %w", err)
+		log.Printf("Error marshalling json: %s", err)
 		return
 	}
 
