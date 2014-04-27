@@ -1,8 +1,9 @@
-package http
+package json_helpers
 
 import (
 	"encoding/json"
 	"io/ioutil"
+	"log"
 	"net/http"
 )
 
@@ -13,12 +14,12 @@ func ReadJson(w http.ResponseWriter, r *http.Request, v interface{}) bool {
 	body, err := ioutil.ReadAll(r.Body)
 
 	if err != nil {
-		WriteError(w, "ReadJson couldn't read request body %v", err)
+		log.Printf("ReadJson couldn't read request body %v", err)
 		return false
 	}
 
 	if err = json.Unmarshal(body, v); err != nil {
-		WriteError(w, "ReadJson couldn't parse request; body: %q err: %q", body, err)
+		log.Printf("ReadJson couldn't parse request; body: %q err: %q", body, err)
 		return false
 	}
 
