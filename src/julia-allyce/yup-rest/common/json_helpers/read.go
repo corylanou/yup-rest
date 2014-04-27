@@ -7,8 +7,8 @@ import (
 	"net/http"
 )
 
-// ReadJson will parses the JSON-encoded data in the http request and store the result in v
-func ReadJson(w http.ResponseWriter, r *http.Request, v interface{}) bool {
+// Read will parses the JSON-encoded data in the http request and store the result in v
+func Read(r *http.Request, v interface{}) bool {
 	defer r.Body.Close()
 
 	body, err := ioutil.ReadAll(r.Body)

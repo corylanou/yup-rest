@@ -14,5 +14,5 @@ func Get(w http.ResponseWriter, r *http.Request) {
 		Active: 1,
 	}
 
-	json_helpers.Write(w, user)
+	json_helpers.Write(w, http.StatusOK, user)
 }

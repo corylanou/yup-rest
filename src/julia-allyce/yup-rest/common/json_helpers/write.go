@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func Write(w http.ResponseWriter, v interface{}) {
+func Write(w http.ResponseWriter, code int, v interface{}) {
 	// avoid json vulnerabilities, always wrap v in an object literal
 	// http://haacked.com/archive/2008/11/20/anatomy-of-a-subtle-json-vulnerability.aspx/
 	doc := map[string]interface{}{"d": v}
@@ -22,6 +22,6 @@ func Write(w http.ResponseWriter, v interface{}) {
 
 	w.Header().Set("Content-Length", strconv.Itoa(len(data)))
 	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
+	w.WriteHeader(code)
 	w.Write(data)
 }

@@ -14,6 +14,7 @@ func main() {
 		fmt.Fprintf(w, "hiiiiiiiiii")
 	})
 	r.HandleFunc("/users", users.Get).Methods("GET")
+	r.HandleFunc("/users", users.Post).Methods("POST")
 	http.Handle("/", r)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 
