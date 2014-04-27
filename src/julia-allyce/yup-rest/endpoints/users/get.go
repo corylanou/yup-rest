@@ -1,18 +1,18 @@
 package users
 
-import ( 
-	"net/http"
+import (
 	"encoding/json"
-	"log"
-	"strconv"
 	"julia-allyce/yup-rest/models"
+	"log"
+	"net/http"
+	"strconv"
 )
 
-func Get ( w http.ResponseWriter, r *http.Request ) {
+func Get(w http.ResponseWriter, r *http.Request) {
 	user := models.User{
-		First: "Julia",
-		Last: "Poladsky",
-		Email: "a@b.c",
+		First:  "Julia",
+		Last:   "Poladsky",
+		Email:  "a@b.c",
 		Active: 1,
 	}
 
